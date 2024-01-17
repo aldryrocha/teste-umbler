@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umbler</title>
+	<meta property="og:locale" content="pt_BR" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Umbler - Front-end developer challenge" />
+	<meta property="og:description" content="This is a challenge to a job opportunity as a front-end developer at the Umbler company." />
+	<meta property="og:url" content="" />
+	<meta property="og:site_name" content="Umbler" />
+	<meta property="og:image" content="" />
+
+    <link rel="apple-touch-icon" sizes="72x72" href="./assets/images/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./assets/images/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./assets/images/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./assets/images/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicons/favicon-16x16.png">
+
+    <link rel="stylesheet" href="./assets/scss/main.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <header class="header">
+            <a class="header__logo umbler-logo" href="#"></a>
+            <h1 class="header__title title">
+                <span class="title__style">front-end</span><br>
+                developer <span class="title__color">challenge</span>
+            </h1>
+        </header>
+
+        <section id="product" class="product">
+            <div class="product__box-text">
+                <span class="tag">PRODUCT</span>
+                <h1 class="product__title">Cloud Hosting para todos os tipos de sites e aplicações web</h1>
+                <p class="product__text">Por exigir menos memória e processamento do servidor, e ser assíncrono, o Node.js possibilita o tratamento de requisições de forma muito mais rápida.</p>
+                <div class="product__tecnologies-list">
+                    <span class="sprite-tecnologies logo-grunt"></span>
+                    <span class="sprite-tecnologies logo-container"></span>
+                    <span class="sprite-tecnologies logo-bird"></span>
+                    <span class="sprite-tecnologies logo-gulp"></span>
+                </div>
+            </div>
+            <div class="product__img">
+                <img src="./assets/images/umblerito-dev-mochila.png" alt="umblerito rocket">
+            </div>
+        </section>
+
+        <section id="testimonial" class="testimonial">
+            <div class="testimonial__content">
+                <div class="testimonial__box-text">
+                    <span class="tag">testimonial</span>
+                    <p class="testimonial__text">“como não amar a <span>@umbler</span>, é a melhor hospedagem do Brasil, tem os melhores especialistas e um suporte de tirar inveja!”</p>
+                    <small>Sidney Andrews</small>
+                </div>
+                <div class="testimonial__video">
+                    <video class="lazy" width="745" height="530" autoplay="false" muted loop playsinline width="100%" height="auto" poster="./assets/images/umbler-poster-video.png">
+                        <source src="./assets/images/video-frontend-challenge.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <section id="grid" class="grid">
+            <div class="grid__text">
+                <span class="tag">grid</span>
+                <h1 class="grid__title">Tudo na vida deveria ser só cobrado por uso</h1>
+            </div>
+            <div class="grid__gallery">
+                <ul class="gallery-menu">
+                    <li class="gallery-menu__item gallery-menu__item--active" data-filter="all">All</li>
+                    <li class="gallery-menu__item" data-filter="pink">Pink</li>
+                    <li class="gallery-menu__item" data-filter="yellow">Yellow</li>
+                    <li class="gallery-menu__item" data-filter="brown">Brown</li>
+                </ul>
+                <div class="grid-imgs">
+                    <div class="grid-sizer"></div>
+
+                    <div class="grid-item yellow"><img src="./assets/images/img1.png"></div>
+                    <div class="grid-item pink"><img src="./assets/images/img2.png"></div>
+                    <div class="grid-item yellow"><img src="./assets/images/img1.png"></div>
+                    <div class="grid-item brown"><img src="./assets/images/img4.png"></div>
+                    <div class="grid-item pink"><img src="./assets/images/img2.png"></div>
+                    <div class="grid-item brown"><img src="./assets/images/img4.png"></div>
+                    <div class="grid-item yellow"><img src="./assets/images/img1.png"></div>
+                    <div class="grid-item pink"><img src="./assets/images/img2.png"></div>
+                    <div class="grid-item brown"><img src="./assets/images/img4.png"></div>
+                    <div class="grid-item yellow"><img src="./assets/images/img1.png"></div>
+                    <div class="grid-item brown"><img src="./assets/images/img4.png"></div>
+                    <div class="grid-item yellow"><img src="./assets/images/img1.png"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="try" class="try">
+            <div class="try__text">
+                <span class="tag">TRY</span>
+                <h1>Crie sua conta e ganhe até R$ 100 em créditos</h1>
+                <p>Faça seu cadastro, informe seu domínio e selecione a plataforma que deseja utilizar.</p>
+            </div>
+            <div class="try__form">
+                <form id="form" class="form">
+                    <div class="form__group">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" placeholder="Seu nome..."  required>
+                    </div>
+                    <div class="form__group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Seu email..."  required>
+                    </div>
+                    <button class="form__btn" type="submit">Crie sua conta</button>
+                    <small>Formulário pode ser enviado!</small>
+                </form>
+            </div>
+        </section>
+
+        <footer>
+            <img width="50" height="50" class="umbler-icon" src="./assets/images/umbler-icon.svg" alt="Icon Umbler">
+            <h4>
+                <span>front-end</span><br>
+                developer challenge
+            </h4>
+        </footer>
+
+    </main>
+    <script type="module" src="./assets/js/main.js"></script>
+</body>
+</html>

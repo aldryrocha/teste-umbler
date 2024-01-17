@@ -1,0 +1,27 @@
+@use './variables' as var;
+@use './mixins';
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var.$font;
+}
+h1{
+    @include mixins.ff-fs-cl-fw-line(var.$font, 2.6rem, var.$color-dark-gray, 3.5rem, 500);
+
+    @include mixins.lg {
+        font-size: 3.5rem;
+        line-height: 4rem;
+    }
+}
+p{
+    @include mixins.ff-fs-cl-fw-line(var.$font, 1.2rem, var.$color-light-gray, 1.9rem, 400);
+    
+    @include mixins.lg {
+        font-size: 1.3rem;
+    }
+}
+img{
+    max-width: 100%;
+}

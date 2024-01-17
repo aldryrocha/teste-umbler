@@ -1,0 +1,81 @@
+@use '../abstracts/mixins';
+@use '../abstracts/variables' as var;
+
+//animation effect for the image
+@keyframes float {
+    0% {
+        transform: translatey(0px);
+    }
+    50% {
+        transform: translatey(-20px);
+    }
+    100% {
+        transform: translatey(0px);
+    }
+}
+/*
+    Site Product section 
+*/
+.product{    
+    @include mixins.margem-central(80%);    
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+    margin-top:4rem;
+
+    @include mixins.lg {
+        margin-top: 10rem;
+    }
+
+    .tag{
+        @include mixins.tag;
+        &:after{
+            @include mixins.line;
+        }
+    }
+    &__box-text{
+        padding-bottom:3.5rem;
+        @include mixins.lg {
+            max-width:45vw;
+        }
+    }
+    &__text{
+        padding:2.5rem 0;
+    }
+
+    .sprite-tecnologies{
+        width: 56px;
+        height: 57px;
+        background: url(../images/tecnologies-sprite.png) 0 0 no-repeat;
+        background-position-y:0;
+        display: inline-flex;
+        margin-right: 2rem;
+    }
+    .logo-grunt{
+        width: 43px;
+        background-position-x: -350px;
+    }
+    .logo-container{
+        width: 53px;
+        background-position-x: -240px;
+    }
+    .logo-bird{
+        width: 57px;
+        background-position-x: -292px;
+    }
+    .logo-gulp{
+        width: 28px;
+        background-position-x: -392px;
+    }
+
+    &__img{
+        align-self: self-end;
+
+        img{
+            width:380px;
+            animation: float 6s ease-in-out infinite;
+        }
+    }
+}

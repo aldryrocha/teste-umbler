@@ -1,0 +1,146 @@
+@use '../abstracts/mixins';
+@use '../abstracts/variables' as var;
+
+/*
+    Site Try section 
+*/
+
+.try{
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 4rem;
+
+    @include mixins.lg {
+        margin-top: 10rem;
+        background: -moz-linear-gradient(90deg, var.$primary-color 70%, var.$color-default 30%);
+        background: -webkit-linear-gradient(90deg, var.$primary-color 70%, var.$color-default 30%);
+        background: linear-gradient(90deg, var.$primary-color 70%, var.$color-default 30%);
+        /* old way*/
+        /*
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 50%;
+            height: 100%;
+            background-color: pink;
+            z-index: 1;
+        */
+    }
+    
+        .tag{
+            @include mixins.tag;
+            display: inline-flex;
+            flex-direction: column;
+            align-self: flex-end;
+            color:var.$color-default;
+
+            &:after{
+                @include mixins.line;
+                margin: 1rem auto 2rem auto;
+                display: inline-flex;
+                background: var.$color-default;
+            }
+        }
+        &__text{
+            padding: 4rem 10%;
+            color:var.$color-default;
+            background-color: var.$primary-color;
+
+            @include mixins.lg {
+                width: 30%;
+                padding: 6.25rem 4.6rem 6.25rem 0;
+                display: inline-flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                text-align: right;
+            }
+            h1{
+                color: var.$color-default;
+            }
+            p{
+                @extend h1;
+                padding-top: 2rem;
+            }
+        }
+    
+        &__form{
+            width:80%;
+            margin-top: 3rem;
+            @include mixins.lg {
+                width:30%;
+                margin-top: 0;
+                align-self: center;
+            }
+        }
+
+    .form{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        align-self: stretch;
+        background-color: var.$color-default;
+        border-radius: var.$border-radius;
+        box-shadow: 0 4px 5px 0 rgba(223, 229, 242, 0.5), 0 6px 10px 0 rgba(223, 229, 242, 0.1);
+        padding: 3.12rem;
+
+        small{
+            visibility: hidden;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .sucess-form{
+            color: green;
+            visibility: visible;
+        }
+
+        .form__group{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            gap: 0.5rem;
+            label{
+                @include mixins.ff-fs-cl-fw-line(var.$font,1rem, var.$color-light-gray, 1rem, 500);
+            }
+            input{
+                border: 2px solid #dfe5f2;
+                border-radius: var.$border-radius;
+                @include mixins.ff-fs-cl-fw-line(var.$font,1rem, #dfe5f2, 2.5rem, 400);
+                padding: 0 1rem;
+
+                &:focus-visible{
+                    outline: 2px solid var.$primary-color;
+                    border-radius: var.$border-radius;
+                }
+                &::placeholder {
+                    color: #dfe5f2;
+                    opacity: 1; /* Firefox */
+                }
+                &::-ms-input-placeholder { /* Edge 12 -18 */
+                    color: #dfe5f2;
+                }
+            }
+        }
+        
+        &__btn{
+            background-color:#98bf49;
+            padding:0.8rem 2rem;
+            cursor: pointer;
+            border: 0;
+            border-radius: var.$border-radius;
+            box-shadow: 0 1px 1px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.12);
+            border:2px solid #98bf49;
+            @include mixins.ff-fs-cl-fw-line(var.$font,1rem, var.$color-default, 1rem, 500);
+
+            &:hover{
+                color:#98bf49;
+                background-color:var.$color-default;
+            }
+        }
+        
+    }
+}

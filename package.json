@@ -1,0 +1,22 @@
+{
+  "name": "teste-umbler-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "source": "index.html",
+  "scripts": {
+    "dev": "parcel --public-url ./dist",
+    "prod": "parcel build --dist-dir ./build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@parcel/transformer-sass": "^2.11.0",
+    "masonry-layout": "^4.2.2"
+  },
+  "devDependencies": {
+    "imagesloaded": "^5.0.0",
+    "parcel": "^2.11.0",
+    "process": "^0.11.10"
+  }
+}

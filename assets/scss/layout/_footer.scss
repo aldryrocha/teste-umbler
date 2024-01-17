@@ -1,0 +1,40 @@
+@use '../abstracts/mixins';
+@use '../abstracts/variables' as var;
+
+/*
+    Site footer
+*/
+
+footer{
+    text-align: center;
+    padding: 5rem 0;
+
+    @include mixins.lg {
+        padding: 10rem 0;
+    }
+    .umbler-icon{
+        width:50px;
+        height:50px;
+    }
+    h4{
+        @include mixins.ff-fs-cl-fw-line(var.$font, 1.5rem, var.$color-light-gray, 2rem, 700);
+        span{
+            font-weight: 300;
+            font-style: italic;
+            color:var.$color-light-gray;
+            position: relative;
+            &:before{
+                position: absolute;
+                content: "<";
+                color: var.$color-light-gray;
+                left: -15px;
+            }
+            &:after{
+                position: absolute;
+                content: ">";
+                right:-20px;
+                color: var.$color-light-gray;
+            }
+        }
+    }
+}

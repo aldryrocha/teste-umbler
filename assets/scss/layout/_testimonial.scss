@@ -1,0 +1,77 @@
+@use '../abstracts/mixins';
+@use '../abstracts/variables' as var;
+
+/*
+    Site Testimonial section 
+*/
+.testimonial{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    background: none;
+    margin: 5rem 0;
+
+    @include mixins.xl{
+        background: url(../images/umbler-background-product.png) no-repeat 100px 50px;
+        padding-top: 7rem;
+        margin: 0 auto;
+    }
+
+    &:before{
+        width:100%;
+        height: 100vh;
+        background-color: var.$color-lighter-gray;
+        //transform: skewY(-30deg);
+        content: "";
+        z-index: -1;
+        position: absolute;
+        @include mixins.xxl{
+            top: -15px;
+        }
+        @include mixins.lg {
+            transform: skewY(-30deg);
+        }        
+    }
+    &__content{
+        @include mixins.margem-central(80%);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        text-align: center;
+        padding: 5rem 0;
+    
+        @include mixins.lg {
+            flex-flow: column wrap;
+            margin-top: 10rem;
+            padding: 0;
+        }
+    }
+    .tag{
+        @include mixins.tag;
+        &:after{
+            @include mixins.line;
+            margin: 1rem auto 2rem auto;
+        }
+    }
+    &__text{
+        font-style: italic;
+        @include mixins.ff-fs-cl-fw-line(var.$font,1.7rem, var.$color-light-gray,2.5rem,400);
+        margin: 0 auto;
+        
+
+        @include mixins.lg {
+            max-width:635px;
+        }
+
+        span{
+            color: var.$primary-color;
+        }        
+    }
+    small{
+        @include mixins.ff-fs-cl-fw-line(var.$font,1.2rem, var.$color-dark-gray,2.5rem, 700);
+        font-style: italic;
+    }
+    &__video{
+        margin-top: 3rem;
+    }
+}

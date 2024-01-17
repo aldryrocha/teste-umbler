@@ -1,0 +1,66 @@
+@use './variables' as var;
+
+//centralize the content
+@mixin margem-central($width){
+    margin:0 auto;
+    width:$width;
+}
+//font style definition
+@mixin ff-fs-cl-fw-line($f-family, $f-size, $f-color, $line, $f-weight:400){
+    font-family: $f-family;
+    font-size: $f-size;
+    color: $f-color;
+    line-height: $line;
+    font-weight: $f-weight;
+}
+//tags use on the sections page
+@mixin tag{
+    color: var.$secondary-color;
+    font-size: 1rem;
+    font-family: var.$font;
+    font-weight:500;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+//line on the bottom of the tag
+@mixin line{
+    content: "";
+    display: block;
+    background: var.$secondary-color;
+    width: 35px;
+    height: 5px;
+    border-radius: 10px;
+    margin: 1rem 0 0.5rem;
+}
+
+//MEDIA QUERIES FOR BREAKPOINT DEVICES
+// Small devices
+@mixin sm {
+    @media (min-width: var.$screen-sm) {
+        @content;
+    }
+ }
+ // Medium devices
+ @mixin md {
+    @media (min-width: var.$screen-md) {
+        @content;
+    }
+ }
+ // Large devices
+ @mixin lg {
+    @media (min-width: var.$screen-lg) {
+        @content;
+    }
+ }
+ // Extra large devices
+ @mixin xl {
+    @media (min-width: var.$screen-xl) {
+        @content;
+    }
+ }
+  // Extra large devices
+  @mixin xxl {
+    @media (min-width: var.$screen-xxl) {
+        @content;
+    }
+ }
