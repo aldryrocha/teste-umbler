@@ -1,6 +1,6 @@
 # @aldryrocha' Teste Umbler
 
-This is a old challenge to a job opportunity (which I discovered in [https://github.com/felipefialho/frontend-challenges](https://github.com/felipefialho/frontend-challenges) as a front-end developer at the Umbler company, made with [HTML5, SASS and Vanilla JS, bundled with Parcel]. 
+This is a old challenge to a job opportunity (which I discovered in [https://github.com/felipefialho/frontend-challenges](https://github.com/felipefialho/frontend-challenges) ) as a front-end developer at the Umbler company, made with [HTML5, SASS and Vanilla JS, bundled with Parcel]. 
 
 You can see it live at [teste-umbler.vercel.app](https://teste-umbler.vercel.app/).
 
