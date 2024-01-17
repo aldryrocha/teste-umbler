@@ -4,7 +4,7 @@ import imagesLoaded from "imagesloaded";
 //LAZY VIDEO
 document.addEventListener("DOMContentLoaded", function() {
     const video = document.querySelector("video.lazy");
-    if ("IntersectionObserver" in window) {
+    if ("IntersectionObserver" in window) {//check if video is on screen
         const videoObserver = new IntersectionObserver(function(entries, observer) {
             entries.forEach(function(entry) {
                 if (entry.isIntersecting) {
@@ -20,23 +20,21 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 //Masonry Gallery
-// init Masonry
 const grid = document.querySelector('.grid-imgs');
-const msnry = new Masonry(grid);
-// layout Masonry after each image loads
-imagesLoaded(grid, () => {
-    msnry.layout();
-})  
+const msnry = new Masonry(grid); // init Masonry
+imagesLoaded(grid, () => msnry.layout()); // layout Masonry after each image loads
  
 //FILTER GALLERY
 const filterContainer = document.querySelector(".gallery-menu");
 const galleryItems = document.querySelectorAll(".grid-imgs .grid-item");
+const activeItem = filterContainer.querySelector(".gallery-menu__item--active");
 
 filterContainer.addEventListener("click", (event) =>{
     if(event.target.classList.contains("gallery-menu__item")){
-        filterContainer.querySelector(".gallery-menu__item--active").classList.remove("gallery-menu__item--active"); //disables existing active 'filter-item'
-        event.target.classList.add("gallery-menu__item--active"); // activate new 'filter-item' on the select item
-        const filterValue = event.target.getAttribute("data-filter");
+        activeItem.classList.remove(activeItem); //disables existing active 'filter-item'
+        event.target.classList.add(activeItem); // activate new 'filter-item' on the select item
+        const filterValue = event.target.getAttribute("data-filter"); //get the item to filter
+
         galleryItems.forEach((item) =>{
             if(item.classList.contains(filterValue) || filterValue === 'all'){
                 item.classList.remove("hide");
@@ -48,6 +46,7 @@ filterContainer.addEventListener("click", (event) =>{
                 item.classList.add("hide");
             }
         });
+        
     }
 });
 
