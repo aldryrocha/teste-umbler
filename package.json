@@ -4,6 +4,7 @@
   "description": "",
   "source": "index.html",
   "scripts": {
+    "start": "parcel index.html",
     "dev": "parcel --public-url ./dist",
     "prod": "parcel build --dist-dir ./build"
   },

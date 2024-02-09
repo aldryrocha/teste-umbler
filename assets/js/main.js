@@ -23,16 +23,17 @@ document.addEventListener("DOMContentLoaded", function() {
 const grid = document.querySelector('.grid-imgs');
 const msnry = new Masonry(grid); // init Masonry
 imagesLoaded(grid, () => msnry.layout()); // layout Masonry after each image loads
- 
+
 //FILTER GALLERY
 const filterContainer = document.querySelector(".gallery-menu");
 const galleryItems = document.querySelectorAll(".grid-imgs .grid-item");
-const activeItem = filterContainer.querySelector(".gallery-menu__item--active");
 
 filterContainer.addEventListener("click", (event) =>{
+  const activeItem = filterContainer.querySelector(".gallery-menu__item--active");
+
     if(event.target.classList.contains("gallery-menu__item")){
-        activeItem.classList.remove(activeItem); //disables existing active 'filter-item'
-        event.target.classList.add(activeItem); // activate new 'filter-item' on the select item
+        activeItem.classList.remove('gallery-menu__item--active'); //disables existing active 'filter-item'
+        event.target.classList.add('gallery-menu__item--active'); // activate new 'filter-item' on the select item
         const filterValue = event.target.getAttribute("data-filter"); //get the item to filter
 
         galleryItems.forEach((item) =>{
@@ -46,7 +47,7 @@ filterContainer.addEventListener("click", (event) =>{
                 item.classList.add("hide");
             }
         });
-        
+
     }
 });
 
